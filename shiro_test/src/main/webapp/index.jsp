@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="login" method="post">
+<form action="login1.do" method="post">
 <input name="name">
 <input name="pass" type="password">
 <input type="submit"> 

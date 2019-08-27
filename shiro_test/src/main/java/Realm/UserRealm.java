@@ -16,10 +16,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-@Component
+@Component("userRealm")
 public class UserRealm extends AuthorizingRealm {
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
+		System.out.println("获取");
 		//获取权限权限列表
 		 Iterator<String> iter = principals.fromRealm(getName()).iterator();
                 SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
@@ -29,6 +30,7 @@ public class UserRealm extends AuthorizingRealm {
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
 		// 进行登陆操作
+		System.out.println("检验");
 		 try {
 	            UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
 	            String name = token.getUsername();
