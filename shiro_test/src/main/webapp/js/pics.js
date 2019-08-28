@@ -1,6 +1,6 @@
 
 
-$(function(){
+function pics(){
 	$(".img-box").append($("<input style='display: none' type='file'  class='file'  />"));
 	
 	
@@ -52,6 +52,30 @@ $(function(){
     });
 	});
 	
+	this.init = function(urls){
+		for(var i=0;i<urls.length;i++){
+			addpic(urls[i]);
+		}
+	}
 	
+	this.initpics=function(){
+		$("item").each(function(){
+			addpic($(this).attr("url"));
+		});
+		$("item").remove();
+	}
 	
-});
+}
+
+
+
+var picsobject=new pics();
+
+function pics_init(urls){
+	picsobject.init(urls);
+}
+
+
+$(function(){
+	picsobject.initpics();
+})
