@@ -6,10 +6,40 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<script type="text/javascript" src="../js/jquery-2.2.4.min.js"></script>
 </head>
 <body>
-<form action="index" method="post">
-<select name="txt">
+<script type="text/javascript">
+var s="${opt}";
+function chan(o){
+	if(o.value==0){
+		a1.style.display="inline";
+		a2.style.display="none";
+	}else{
+		a2.style.display="inline";
+		a1.style.display="none";
+	}
+}
+
+$(function(){
+	$("[name=opt]").val(s.length>0?s:0);
+	if(s.length==0||s==0){
+		a1.style.display="inline";
+		a2.style.display="none";
+	}else{
+		a2.style.display="inline";
+		a1.style.display="none";
+	}
+})
+</script>
+<form action="index" method="post" enctype="application/json">
+
+<select  name="opt" onchange="chan(this);" >
+<option value="0">名称查询</option>
+<option value="1">状态查询</option>
+</select>
+<input name="txt" id="a1" value="${txt}">
+<select  name="status" id="a2" style="display: none;">
 <c:set var="all" value="true" scope="request"></c:set>
 <c:set var="optionlist" value="${statuslist}" scope="request"></c:set>
 <c:set var="current" value="${status}" scope="request"></c:set>
