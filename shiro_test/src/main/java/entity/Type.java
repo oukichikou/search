@@ -6,8 +6,23 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Type  {
+public static String[] statuslist= {"z1","z2","z3"};
+public String getStatusname() {
+	return statuslist[status];
+}
+	
 	private int id;
 	private String name;
+	private int status;
+	
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
 	public Type() {
 		// TODO Auto-generated constructor stub
 	}
