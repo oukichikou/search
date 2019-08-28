@@ -11,11 +11,10 @@ import controller.testController;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class test1 {
-@Autowired
-testController c;
+
 
 @Test
 public void ssD() {
-	System.out.println(c);
+	
 }
 }
