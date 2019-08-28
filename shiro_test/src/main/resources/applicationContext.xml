@@ -49,25 +49,6 @@
     </bean>
     
     
-  
-    <context:component-scan base-package="Realm"></context:component-scan>
-    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-        <property name="realms" ref="userRealm" />
-    </bean>
-    
-    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-        <property name="securityManager" ref="securityManager" />
-        <property name="loginUrl" value="/index.jsp" />
-        <property name="successUrl" value="/index" />
-        <property name="unauthorizedUrl" value="/no" />
-        
-        <property name="filterChainDefinitions">
-            <value>
-            	/**=authc
-            </value>
-        </property>
-    </bean>
-   
     
 <!-- 扫描实现类的包 -->
     <context:component-scan base-package="controller"></context:component-scan>
