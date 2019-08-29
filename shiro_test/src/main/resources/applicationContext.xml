@@ -44,7 +44,7 @@
     
     <!-- 视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/"  />
+        <property name="prefix" value="/WEB-INF/pages/"  />
         <property name="suffix" value=".jsp"/>
     </bean>
     
@@ -56,5 +56,5 @@
 	<context:component-scan base-package="dao"></context:component-scan>
     <!-- 加载其他的配置 -->
     <import resource="classpath:applicationContext-dao.xml"/>
-
+<import resource="classpath:shiro.xml"/>
 </beans>
