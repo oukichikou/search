@@ -28,6 +28,7 @@ public class SelectByArray extends TagSupport{
 
 	public void setAll(boolean all) {
 		this.all = all;
+		if(all&&current==0)current=-1;
 	}
 
 
